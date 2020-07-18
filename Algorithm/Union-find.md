@@ -27,31 +27,36 @@ void union(int[] root, int a, int b){
 
 ```
 // 3. Find
+// line 3 : 경로 압축 과정 (root값을 갱신해준다)
 1 void findRoot(int[] root, int element){
 2     if(root[element] == element) return element;
 3     return root[element] = findRoot(root, root[element]);
 4 }
+
 ```
-- line 3 : 경로 압축 과정 (root값을 갱신해준다)
 
 
 ![unionFind](./img/Union-find.png)
 1) Initialize    
+
 |node|1|2|3|4|5|6|
 |---|---|---|---|---|---|---|
 |root|1|2|3|4|5|6|
 
 2) 5-6 연결    
+
 |node|1|2|3|4|5|6|
 |---|---|---|---|---|---|---|
 |root|1|2|3|4|5|**5**|
 
 3) 3-5 연결    
+
 |node|1|2|3|4|5|6|
 |---|---|---|---|---|---|---|
 |root|1|2|3|4|**3**|5|
 
 4) 2-5 연결    
+
 |node|1|2|3|4|5|6|
 |---|---|---|---|---|---|---|
 |root|1|2|**2**|4|**2**|5|
