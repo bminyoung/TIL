@@ -10,7 +10,7 @@
 - 간선의 가중치 총합이 최소가 되는 Spanning Tree
 
 ### 3. MST 알고리즘
-- ![Kruskal 알고리즘](./Kruskal.md)
+- [Kruskal 알고리즘][./Kruskal.md]
 - Prim 알고리즘
 
 ##### 관련문제
