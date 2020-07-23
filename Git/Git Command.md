@@ -46,3 +46,9 @@
 
 ※ `$ git push -u origin master`
 - origin 이라는 원격저장소와 master라는 브랜치를 연결, 이후 `$ git push` 로 간단하게 쓸 수 있다
+
+
+### 5. ETC
+`$ git status` : 파일 변경사항 등 정보 표시
+
+`$ gitk` : GUI 이용
