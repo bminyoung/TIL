@@ -31,10 +31,23 @@ public class ExampleApplication {
 #### 4-1. 캐시 등록
 - @Cacheable : 있으면 가져오기, 없으면 저장
 - @CachePut : 캐시 저장
+```
+//key를 지정하지 않으면 파라미터를 key로 지정한다
+@Cacheable(value = "userName", key="#name")
+public String find(String name) {
+	...
+    return name;
+}
+```
 
 #### 4-2. 캐시 삭제
 - @CacheEvict
-
+```
+@CacheEvice(value = "userName", key="#name")
+public void delete(String name) {
+	...
+}
+```
 
 
 참고
