@@ -22,7 +22,7 @@ new GenericJackson2JsonRedisSerializer(new ObjectMapper())을 넣어줌
 redisTemplate.setValueSerializer(new GenericJackson2JsonRedisSerializer(new ObjectMapper()));
 ```
 
-3. ObjectMapper
+### 3. ObjectMapper
 - 캐시를 받아올때 ObjectMapper를 사용
 
 ```
