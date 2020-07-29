@@ -1,5 +1,5 @@
 # TIL
-단 한 줄이라도 Daily update!!
+단 한 줄이라도 매일 공부한 것, 복습한 것 Daily update!!
 
 ## 규칙
 - 의미없는 커밋x
