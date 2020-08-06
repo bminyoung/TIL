@@ -18,3 +18,9 @@
 
 
 ### Java
+- Java에서는 컴파일러에 의해 .java 파일이 .class 파일로 변환된다
+- .class 파일은 인터프리터에 의해 기계어로 변환된다
+
+`[.java] ---Compiler--->> [.class] ---Interpreter--->> [기계어]`
+
+- 왜 2개를 같이 쓸까?
