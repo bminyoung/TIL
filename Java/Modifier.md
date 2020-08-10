@@ -13,6 +13,7 @@
 - 캡슐화를 하는데 사용한다
 - class에는 public, default만 사용가능
 - 접근제어자를 명시하지 않으면 default    
+
 |---|public|protected|default|private|
 |---|---|---|---|---|
 |같은클래스|o|o|o|o|
