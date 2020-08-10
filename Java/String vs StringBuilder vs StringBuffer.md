@@ -24,6 +24,7 @@ System.out.println(sb.toString()); //hello world
 - 연산할 때 새로운 객체를 만들지 않고 원본을 수정한다
 
 - 차이점 : 동기화 지원 여부
+
 |StringBuilder|StringBuffer|
 |---|---|
 |동기화 지원 x|동기화 지원 o|
