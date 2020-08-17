@@ -9,6 +9,7 @@
 - try 블록 : 수행할 코드
 - catch 블록 : try 블록에서 예외 발생시 수행할 코드
 - finally : 예외 유무에 상관없이 무조건 수행할 코드    
+	- catch 블록 없이 finally 블록을 쓸 수는 있다.
 
 - 예외 발생 x : try -> finally
 - 예외 발생 : try -> catch -> finally
