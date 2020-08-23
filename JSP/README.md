@@ -17,6 +17,11 @@
 ### 2) JSP Script
 ### 3) JSP 내장객체
 
+## [4. Cookie,Session,Encoding](./4.%20Cookie,Session,Encoding.md)
+### 1) Cookie
+### 2) Session
+### 3) Encoding
+
 ***
 ##### 참조
 [inflearn jsp](https://www.inflearn.com/course/%EC%8B%A4%EC%A0%84-jsp_renew)
