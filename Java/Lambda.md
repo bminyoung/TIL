@@ -15,7 +15,7 @@ MyInterface mi = new MyInterface() { //1
 };
 mi.someFunction("Hello!");
 ```
-1 : MyInterface 라는 타입을 이미 명시
+1 : MyInterface 라는 타입을 이미 명시    
 2 : 오버라이드해야할 함수가 1개뿐
 ```
 MyInterface mi = (String str){
