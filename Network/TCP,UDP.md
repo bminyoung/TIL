@@ -12,7 +12,7 @@
 - 대부분의 서비스에 사용된다.
 - [흐름 제어, 혼잡 제어](./.md)
 - 연결 시 3방향 핸드셰이크, 해제할 때는 4방향 핸드셰이크를 사용한다.
-- 전이중(full-duplex) 통신방식
+- [전이중(full-duplex)](./Simplex,Half-Duplex,Full-Duplex.md) 통신방식
 
 
 ## UDP (User Datagram Protocol)
