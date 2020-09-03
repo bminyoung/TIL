@@ -37,7 +37,7 @@ public static void main(){
 	user.setJoinDate(date);
 
 	//또는
-	User user = new User(id, pw, name, gender, address, date);
+	//User user = new User(id, pw, name, gender, address, date);
 }
 ```
 
@@ -73,6 +73,8 @@ class UserBuilder{
 		
 		return user;
 	}
+
+	/* getter */
 }
 
 ...
@@ -80,10 +82,10 @@ class UserBuilder{
 public static void main(){
 	UserBuilder builder = new UserBuilder();
 	User user = builder
-				.id("testId")
-				.pw("testPw")
-				...
-				.build();
+		    .id("testId")
+		    .pw("testPw")
+		    ...
+		    .build();
 }
 ```
 1. setter함수 => return 형식을 void -> Builder로 변경한다.
@@ -101,8 +103,8 @@ public static UserBuilder builder(){
 
 public static void main(String[] args){
 	User user = UserBuilder.Builder()
-				.id("testId")
-				.password("testPw")
-				...
-				.build();
+		    .id("testId")
+		    .password("testPw")
+		    ...
+		    .build();
 ```
