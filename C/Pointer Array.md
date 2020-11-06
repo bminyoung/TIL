@@ -1,4 +1,4 @@
-﻿# Pointer
+﻿# Pointer Array
 
 ## 1. 포인터 배열
 > [데이터형]* [배열명][배열크기]
@@ -45,16 +45,28 @@ for(i = 0; i < 3; i++){
 ```c
 typedef struct _student{
 	char name[10];
-	int grade;
 	int kor_score;
 	int math_score;
 	int eng_score;
 }student;
 ```
 > 학생들의 리스트를 만들고 싶다. 몇명인지 모르므로 적당히 크기는 100으로 잡는다. 
-> `student std[100];`
+> `student students[100];`
 > student 구조체의 크기가 100, 1000, ...이라면?
 > => 메모리 낭비
 
 - 대신 구조체 포인터 배열을 사용할 수 있다.
 	- 포인터 변수의 크기는 4바이트로 고정
+
+```c
+student s1 = {"gildong", 80, 90, 70};
+student s2 = {"younghee", 10, 20, 30};
+student* students[] = {&s1, &s2};
+
+int i;
+for(i = 0; i < 2; i++){
+	printf("name = %s\n", students[i]->name);
+	printf("score = %d %d %d\n", students[i]->kor_score, students[i]->math_score, students[i]->eng_score);
+	//students[i] = 포인터 변수
+```
+- `student* students[] = {&s1, &s2}` : 배열에 지역변수 s1, s2의 주소를 대입해주었다 => [동적메모리 할당 ](./malloc.md) 참조
