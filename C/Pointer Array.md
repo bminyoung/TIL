@@ -69,4 +69,4 @@ for(i = 0; i < 2; i++){
 	printf("score = %d %d %d\n", students[i]->kor_score, students[i]->math_score, students[i]->eng_score);
 	//students[i] = 포인터 변수
 ```
-- `student* students[] = {&s1, &s2}` : 배열에 지역변수 s1, s2의 주소를 대입해주었다 => [동적메모리 할당 ](./malloc.md) 참조
+- `student* students[] = {&s1, &s2}` : 배열에 지역변수 s1, s2의 주소를 대입해주었다 => 보통 지역변수가 아닌 동적메모리를 사용한다. [동적메모리 할당 ](./malloc.md) 참조
