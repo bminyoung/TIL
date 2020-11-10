@@ -26,3 +26,28 @@
 > int fclose(FILE* stream)
 
 - 파일 입출력 후 파일을 꼭 닫아주어야 한다.
+
+## 3. 텍스트 파일 입출력
+> int fgetc(FILE *fp)
+
+- 파일에서 한 글자를 입력받는다.
+
+> int putchar(int c, FILE *fp)
+
+- 파일에서 한 글자를 출력한다.
+
+> char *fgets(char *str, int n, FILE *stream
+
+- 파일에서 한 줄을 입력받는다.
+
+> int fputs(const char *str, FILE *fp)
+
+- 파일에서 한 줄을 출력한다.
+
+> int fscanf(FILE *fp, ...)
+
+- 파일에서 형식 문자열을 이용해 입력받는다.
+
+> int fprintf(FILE *fp, ...)
+
+- 형식 문자열을 이용해 파일에 출력한다.
