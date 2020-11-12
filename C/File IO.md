@@ -65,6 +65,12 @@ fclose(fp);
 - 파일에서 한 줄을 출력한다.
 > int fputs(const char *str, FILE *fp)
 
+```c
+char buff[1024];
+while( fgets(buffer,100, fp) != NULL){
+	fputs(buffer,fp2);
+}
+```
 
 #### fscanf
 - 파일에서 형식 문자열을 이용해 입력받는다.
