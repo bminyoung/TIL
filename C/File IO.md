@@ -76,6 +76,20 @@ while( fgets(buffer,100, fp) != NULL){
 - 파일에서 형식 문자열을 이용해 입력받는다.
 > int fscanf(FILE *fp, ...)
 
+```c
+char buff[1024];
+int line;
+fscanf(fp, "%d %s", line, buff);
+printf("[%d]: %s\n", line, buff);
+```
+
 #### fprintf
 - 형식 문자열을 이용해 파일에 출력한다.
 > int fprintf(FILE *fp, ...)
+
+```c
+char buff[1024];
+int line;
+...
+fprintf(fp, "%d: %s", line, buff);
+```
