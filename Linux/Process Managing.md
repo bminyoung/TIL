@@ -14,7 +14,7 @@
 - pid_t는 C의 int 타입으로 정의한다.
 
 #### pid, ppid 얻기
-> pid_t getpid(void)
+> pid_t getpid(void);    
 > pid_t getppid(void);
 
 
