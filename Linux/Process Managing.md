@@ -14,7 +14,7 @@
 - pid_t는 C의 int 타입으로 정의한다.
 
 #### pid, ppid 얻기
-> pid_t getpid(void);    
+> pid_t getpid(void)
 > pid_t getppid(void);
 
 
@@ -25,3 +25,10 @@
 printf("pid= %d\n", getpid());
 printf("ppid= %d\n", getppid());
 ```
+
+## 2. exec
+> 새로운 프로그램을 실행하는 기능은 exec 호출 군이 제공한다.
+
+- 새로운 프로세스를 실행하기 위해 부모 프로세스를 복제한다. (=fork)
+- 새로운 프로그램을 새로운 프로세스에 올려 실행하는 작업
+	- => fork(프로세스를 만든다) -> exec(새 이미지를 프로세스에 올린다)
