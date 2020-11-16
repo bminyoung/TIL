@@ -32,3 +32,16 @@ printf("ppid= %d\n", getppid());
 - 새로운 프로세스를 실행하기 위해 부모 프로세스를 복제한다. (=fork)
 - 새로운 프로그램을 새로운 프로세스에 올려 실행하는 작업
 	- => fork(프로세스를 만든다) -> exec(새 이미지를 프로세스에 올린다)
+
+## 3. fork
+> 현재의 프로세스와 동일한 이미지로 동작하는 새 프로세스를 만든다.
+
+- 부모: 원본 프로세스, fork 성공 시 자식의 pid 반환
+- 자식: 새로운 프로세스, fork 성공 시 0 반환
+
+```c
+pid_t pid = fork();
+if(pid > 0) printf("This is parent of %d\n", pid);
+else if(!pid) printf("This is child!\n");
+else printf("error\n");
+```
