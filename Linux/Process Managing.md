@@ -45,3 +45,14 @@ if(pid > 0) printf("This is parent of %d\n", pid);
 else if(!pid) printf("This is child!\n");
 else printf("error\n");
 ```
+
+## 4. exit
+> 프로그램을 종료한다.    
+> void exit(int status);
+
+- 보통 0은 일반적으로 성공, 1이나 -1처럼 0이 아닌 값은 실패를 의미한다.
+```c
+exit(0);
+//or
+exit(EXIT_SUCCESS);
+```
