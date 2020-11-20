@@ -11,3 +11,22 @@
 3) setsid() 호출
 4) chdir() 호출로 작업 디렉터리를 루트 디렉터리로 변경
 5) 모든 파일 기술자 close
+
+## 2. Example
+```c
+int main(int argc, char** argv){
+	pid_t pid;
+	int i;
+	
+	// (1) 프로세스 생성
+	pid = fork();
+	if(pid == -1) return -1;
+	else if(pid != 0) exit(EXIT_SUCCESS); // (2)
+
+	//(3)
+	if(setsid() == -1) return -1;
+
+	//(4)
+	if(chdir("/") == -1) return -1;
+}
+```
