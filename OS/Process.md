@@ -18,7 +18,7 @@
 
 #### 2) 프로세스 상태
 
-![process state](./Image/Process state.JPG)
+![process state](./Image/Process_state.JPG)
 
 - New: 프로세스가 생성됨
 - Running: cpu를 점유해서 프로세스의 명령 실행
@@ -82,7 +82,7 @@
   - 현재 프로세스의 상태 저장 & 다른 프로세스의 상태 복원
 - 프로세스 상태가 변할때(executing 화살표 전후) 문맥교환
 
-![process state](./Image/Context switch.JPG)
+![process state](./Image/Context_switch.JPG)
 
 
 
