@@ -18,6 +18,8 @@
 
 #### 2) 프로세스 상태
 
+![process state](./Image/Process state.JPG){: width="150" height="150"}
+
 - New: 프로세스가 생성됨
 - Running: cpu를 점유해서 프로세스의 명령 실행
 
@@ -78,6 +80,9 @@
 - 인터럽트 발생 -> 현재 context 저장(pc) -> 후에 다시 시작되면 context 복원
 - 문맥 교환: CPU 코어를 다른 프로세스로 넘겨주는 것
   - 현재 프로세스의 상태 저장 & 다른 프로세스의 상태 복원
+- 프로세스 상태가 변할때(executing 화살표 전후) 문맥교환
+
+![process state](./Image/Context switch.JPG){: width="150" height="150"}
 
 
 
