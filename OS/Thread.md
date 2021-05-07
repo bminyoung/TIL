@@ -11,7 +11,7 @@
 
 #### 2) 다중 스레드
 
-![Single,Multi-thread](./Image/Single,multithread.jpg){: width="200" height="200"}
+![Single,Multi-thread](./Image/Single,multiThread.jpg)
 
 - 단일 스레드: 하나의 작업
 
