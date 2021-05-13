@@ -1,0 +1,29 @@
+﻿
+
+# CPU Scheduling
+
+> CPU를 프로세스 간에 교환하면서 생산성↑
+
+
+
+## 1. Basic Concepts
+
+> 프로세스 대기 -> CPU는 놀게 됨
+>
+> -> CPU 사용을 양도받을 수 있음
+
+#### 1) CPU-I/O 버스트 사이클
+
+- 프로세스 실행 = [CPU 실행 + I/O 대기] 의 사이클
+
+  = CPU 버스트 -> I/O 버스트 -> CPU 버스트 -> I/O 버스트 -> CPU 버스트 -> ... -> CPU 버스트 -> 실행 종료
+
+  <img src="./Image/BurstCycle.jpg" alt="Burst_Cycle" style="zoom:80%;" />
+
+- 프로세스에서 짧은 CPU 버스트가 많음
+
+- I/O 중심의 프로그램 - 짧은 CPU 버스트를 많이 가짐
+
+- CPU 지향 프로그램 - 긴 CPU 버스트를 가질 수 있음
+
+#### 2) CPU 스케줄러
