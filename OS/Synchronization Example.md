@@ -18,8 +18,12 @@
 
 - 생산자 프로세스 구조
   - <img src="./Image/producer process.jpg" alt="producer process" style="zoom:80%;" />
+  
 - 소비자 프로세스 구조
   - <img src="./Image/consumer process.jpg" alt="consumer process" style="zoom:80%;" />
 
 - 생산자는 버퍼를 채우면서 full++
+
 - 소비자는 버퍼를 비우면서 empty--
+
+- mutex는 버퍼 풀에 접근하기 위한 상호 배제 기능을 제공함
