@@ -39,3 +39,26 @@
 - 2개의 writer가 동시에 접근하면 문제가 생길 수 있음
 
   => Readers-Writers 문제 (writer의 쓰기 작업 동안 공유데이터에 배타적 접근 권한을 부여)
+  
+- 두가지 유형
+
+  1. writer가 공유객체 사용 허가를 얻지 못했으면, 어느 reader도 기다리게하면 안됨
+
+     => writer가 기아 상태에 빠질 수 있음
+
+  2. writer가 준비되면 새로운 reader는 읽기를 시작하지 못함
+
+     => reader가 기아 상태에 빠질 수 있음
+
+##### 1번 유형에 대한 해결
+
+```
+semaphore rw_mutex = 1; //이진 세마포
+semaphore mutex = 1; //이진 세마포
+int read_count = 0;
+```
+
+- **mutex**: read_count 갱신 시 상호 배제 보장
+- **read_count**: 몇 개의 프로세스들이 객체를 읽고 있는지
+- **rw_mutex**: writer들을 위한 상호 배제 세마포, 임계구역에 진입하는 첫 reader & 빠져나오는 마지막 reader도 사용
+
