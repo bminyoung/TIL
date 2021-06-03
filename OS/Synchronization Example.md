@@ -61,4 +61,23 @@ int read_count = 0;
 - **mutex**: read_count 갱신 시 상호 배제 보장
 - **read_count**: 몇 개의 프로세스들이 객체를 읽고 있는지
 - **rw_mutex**: writer들을 위한 상호 배제 세마포, 임계구역에 진입하는 첫 reader & 빠져나오는 마지막 reader도 사용
+- writer process
+  - <img src="./Image/writer process.jpg" alt="writer process" style="zoom:80%;" />
+- reader process
+  - <img src="./Image/reader process.jpg" alt="reader process" style="zoom:80%;" />
 
+- 1개의 reader 만이 rw_mutex 관련 큐에 들어감
+
+- writer가 signal(rw_mutex) 실행 시 (n개의 reader) or (1개의 writer)의 수행 재개
+
+  (스케줄러가 결정)
+
+- read-writer 락: Readers-writers 문제 & 해결안을 일반화하여 몇몇 시스템에서 제공
+
+  - 읽기 or 쓰기 모드 지정
+  - 쓰기 모드는 하나의 프로세스만 획득 가능
+
+- read-writer 락이 유용한 상황
+
+  - 공유 데이터를 읽기만 or 쓰기만 하는 스레드를 식별하기 쉬운 프로그램
+  - (#writer ) < (#reader): read-writer 락을 설정하는 데에 오버헤드가 비교적 크게 듦(세마포, 상호 배제 락보다) -> 여러 reader가 읽게 해서 병행성을 높임으로 상쇄
