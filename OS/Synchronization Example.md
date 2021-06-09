@@ -114,11 +114,19 @@ int read_count = 0;
 - 양쪽 젓가락을 집을 수 있는 경우만 젓가락을 집는다고 강제
 
 ```
-# 자료구조 도입
-enum { THINKING, HUNGRY, EATING };
+# 자료구조, 변수 도입
+enum { THINKING, HUNGRY, EATING } state[5];
 # 변수 도입 (젓가락을 집을 수 없을 때 식사를 미룰 수 있음)
 condition self[5];
 ```
 
 - 철학자는 식사 전 `pickup() ` 연산을 호출해야함
 - 철학자는 식사 후 `putdown()` 연산을 호출해야함
+
+<img src="./Image/phil_monitor_sol.jpg" alt="monitor_sol" style="zoom:80%;" />
+
+- pickup(): EATING 상태가 아니면 self.wait()을 통해 젓가락 집기를 미룬다.
+- test(): 양쪽의 철학자들이 EATING 상태가 아니며 본인이 HUNGRY 상태면 EATING상태로 변경
+
+
+
