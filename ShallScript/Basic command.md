@@ -1,0 +1,39 @@
+﻿# Basic Command
+## 1. echo
+> 문자열 프린트
+>
+> echo [출력할 문자열]
+
+```
+$ echo hello world
+hello world
+
+# 공백문자는 1개로 취급됨
+# 단어와 단어 / 명령과 옵션 / 전달인자를 구분하는 용도
+$ echo hello    world
+hello world
+
+# 인용부호 내 공백문자는 문자로 취급
+$ echo "hello    world"
+hello    world
+
+$ echo 'hello world\n\n\n'
+hello world\n\n\n
+
+$ echo -e 'hello world\n\n'
+hello world
+(줄바꿈)
+(줄바꿈)
+
+# 비프음
+$ echo -e '\a'
+$ echo $'\a'
+
+# -n 옵션: 줄바꿈 처리가 안됨
+$ echo -n 'hello world'
+hello worlduser@linux$
+
+# 파일 목록 출력 (공백문자로만 구분, substring시 유용)
+$ echo *
+
+```
