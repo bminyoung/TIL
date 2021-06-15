@@ -58,3 +58,27 @@ $ [ -f 'test.txt' ]
 
 
 
+## 3. alias
+
+> 별칭
+>
+> 긴 명령어를 단축명령어로 쓸 수 있음
+
+```
+# h 입력 시 history 입력과 같은 결과
+$ alias h='history'
+```
+
+
+- alias의 한계 -> function 사용
+
+```
+# test1, test2, test3, ...
+$ alias t1='/test/test1'
+$ alias t2='/test/test2'
+
+$ function ttest() { /test/test${1}; }
+$ ttest 1
+$ ttest 2
+```
+
