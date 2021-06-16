@@ -82,3 +82,19 @@ $ ttest 1
 $ ttest 2
 ```
 
+
+
+## 4. pushd, popd
+
+> 원하는 경로 저장/불러오기 (= cd -)
+
+```
+# 현재 경로 저장
+$ pushd .
+~/Desktop ~/Desktop
+
+# 저장한 경로로 이동
+$ popd
+~/Desktop
+```
+
