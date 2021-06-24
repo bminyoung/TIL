@@ -98,3 +98,23 @@ $ popd
 ~/Desktop
 ```
 
+
+
+## 5. printf
+
+> 형식화된 출력
+
+```
+$ printf "%02d" 1
+01
+
+$ printf "%05d\n" 1
+00001
+
+# legend 라는 변수에 "$name jackson" 값이 들어감
+$ name=michael; printf -v legend "%s jackson" $name; echo $legend
+michael jackson
+```
+
+- 변수 선언: [변수]=[값] (공백 없이)
+- 변수 참조: $[변수]
