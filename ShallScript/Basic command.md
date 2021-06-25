@@ -118,3 +118,42 @@ michael jackson
 
 - 변수 선언: [변수]=[값] (공백 없이)
 - 변수 참조: $[변수]
+
+
+
+## 6. read
+
+>사용자로부터 입력을 받음
+
+```
+$ read num
+12345
+# => num이라는 변수에 12345 저장
+
+$ echo $num
+12345
+
+
+$ read -p "what is your phone number" v
+what is your phone number010-1234-5678
+# => v라는 변수에 저장
+
+$echo -v
+010-1234-5678
+
+
+# -n 1 : 문자 1개만 입력받음 (엔터 필요없음)
+$ read -n 1 -p "Are you over 16?" v
+Are you over 16?y
+
+# -s : 사용자의 입력값이 화면에 나타나지 않음
+$ read -s -n 1 -p "Are you over 16?" v
+Are you over 16?
+
+# -t 3 : 3초동안 입력 시간을 제한
+$ read -s -n 1 -t 3 -p "Are you over 16?" v
+Are you over 16?
+
+
+```
+
