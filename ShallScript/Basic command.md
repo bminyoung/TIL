@@ -178,3 +178,70 @@ $ no=1; while (( no < 10 )); do printf "%02d\n" $no; ((no++)); done
 09
 ```
 
+
+
+## 8. 실행파일 사용
+
+```
+$ echo 'echo hello world' > helloworld.sh
+$ chmod +x helloworld.sh
+$ ./helloworld.sh
+hello world
+```
+
+#### 1) 기존 실행 파일들이 존재하는 경로에 복사해서 사용
+
+- ex) /user/bin
+
+```
+$ cp helloworld.sh /usr/bin
+# =>권한때문에 실행되지 않음
+
+$ sudo cp helloworld.sh /usr/bin
+[sudo] password for user:
+
+$ helloworld.sh
+hello world
+```
+
+
+
+#### 2) 실행 파일 전체 경로 표현
+
+```
+$ pwd
+[현재 경로]
+
+$ [현재 경로]/helloworld.sh
+hello world
+```
+
+
+
+#### 3) 실행 파일의 경로를 환경 변수에 추가
+
+```
+$ echo $PATH
+[환경변수]
+
+$ PATH=$PATH:~/Desktop/shell_cmd
+
+$ echo $PATH
+[환경변수][추가한 경로]
+
+# 1에서 복사했던 파일 삭제 (예제 실행을 위해)
+$ sudo rm /usr/bin/helloworld.sh
+
+$ helloworld.sh
+hello world
+```
+
+
+
+#### 4) 현재 경로에서 실행
+
+```
+# 현재 경로를 상대 경로로 표현
+$ ./helloworld.sh
+```
+
