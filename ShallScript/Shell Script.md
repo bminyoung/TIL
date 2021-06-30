@@ -13,3 +13,28 @@
   - 사용자와 상호작용
   - 요구사항을 커널로 전달
 
+
+
+## 2. 작성 방법
+
+- 파일 맨 앞에 `#!/bin/bash` 입력: 쉬뱅(해시뱅)
+  - /bin/bash 가 주된 실행자
+
+```
+<hello world.sh 파일>
+#!/bin/bash
+echo hello world
+```
+
+
+
+- /bin/bash가 없어도 (bin에 bash가 없어도) 실행 가능
+
+```
+<hello world.sh 파일>
+#!/usr/bin/env bash
+echo hello world
+```
+
+
+
