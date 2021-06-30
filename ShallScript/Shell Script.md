@@ -38,3 +38,10 @@ echo hello world
 
 
 
+## 3. DOS스타일의 줄끝
+
+- LF: Line Feed
+- CR: Carriage Return
+- linux: LF
+- windows: CRLF
+- 쉘에서 동작하는, 리눅스에서 사용하는 파일은 windows의 편집기는 피할 것
