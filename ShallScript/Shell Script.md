@@ -45,3 +45,29 @@ echo hello world
 - linux: LF
 - windows: CRLF
 - 쉘에서 동작하는, 리눅스에서 사용하는 파일은 windows의 편집기는 피할 것
+
+
+
+## 4. 실행 방법
+
+```
+# 실행 권한 주기
+$ chmod +x helloworld.sh
+
+# 1. 경로
+$ ./helloworld.sh
+hello world
+
+# 2. bash
+$ bash helloworld.sh
+hello world
+
+# 3. source
+$ source helloworld.sh
+hello world
+
+# 4. dot
+$ . helloworld.sh
+hello world
+```
+
