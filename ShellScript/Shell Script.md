@@ -215,3 +215,22 @@ $ echo "The average is $(( (a+b)/2 ))"
 
 > ~
 
+
+
+## 6. 쉘 변수
+
+- 변수 선언 시 '=' 양쪽에 공백 문자가 있으면 안 됨
+- 변수 사용 시 앞에 '$' 문자를 붙여야 함
+
+```
+$ animal=tiger
+
+# 오류
+$ animal =tiger
+$ animal= tiger
+
+$ color=white
+$ echo "tiger's color is $color"
+tiger's color is white
+```
+
