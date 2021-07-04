@@ -234,3 +234,36 @@ $ echo "tiger's color is $color"
 tiger's color is white
 ```
 
+
+
+## 7. 파라미터 대체와 인용부호
+
+- 변수에 공백이 포함되어 있어 인용부호("")를 붙여야 함
+
+```
+$ book="The old man and the sea.mp3"
+
+# 에러
+$ rm $book
+
+# 정상
+$ rm "$book"
+```
+
+- 파라미터 구분을 위해 {} 기호를 써줌
+
+```
+$ animal=Tiger; color=Red
+
+# 의도=Tigers Reds => 아무것도 출력되지 않음
+$ echo "$animals $colors"
+
+# 정상동작
+$ echo ${animal}s vs. ${color}s
+Tigers vs. Reds
+
+# 확실하게 하려면 인용부호("") 붙이기
+$ echo "${animal}s vs. ${color}s"
+Tigers vs. Reds
+```
+
