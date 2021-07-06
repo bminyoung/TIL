@@ -267,3 +267,68 @@ $ echo "${animal}s vs. ${color}s"
 Tigers vs. Reds
 ```
 
+
+
+## 8. 특수 매개변수
+
+- ` (backtick) 백틱 사이 실행이 먼저 됨
+
+```
+$ vim whereis.sh
+
+#!/bin/bash
+DIRECTORY=`dirname $0`
+echo $DIRECTORY
+
+# "dirname $0" 실행 후 DIRECTORY 변수에 대입
+$ chmod +x whereis.sh
+$ ./whereis.sh
+.
+```
+
+
+
+- 파일 실행 시 전달인자 사용
+
+```
+$ vim whois.sh
+
+#!/bin/bash
+name=$1
+email=$2
+all=$*
+
+echo "your name is $name"
+echo "your email is $email"
+echo "* is $all"
+
+$ ./whois.sh
+your name is
+your email is
+* is
+
+# $1=./whois.sh $2=gildong $3=gildong@gmail.com
+$ ./whois.sh gildong gildong@gmail.com
+your name is gildong
+your email is gildong@gmail.com
+* is gildong gildong@gmail.com
+```
+
+
+
+#### 특수 매개변수
+
+| name    | usage  | description                                                  |
+| ------- | ------ | ------------------------------------------------------------ |
+| 0       | $0     | 스크립트의 이름 또는 경로 포함                               |
+| 1 2 etc | $1 etc | 현재 스크립트 또는 함수에 전달된 인수                        |
+| *       | "$*"   | 모든 위치 매개변수의 모든 단어, 큰따옴표를 붙이면 IFS 변수의 첫번째 문자로 분리된 모든 문자열을 포함하는 단일 문자열 |
+| @       | $@     | 모든 위치 매개변수의 모든 단어                               |
+| #       | $      | 위치 매개변수의 수                                           |
+| ?       | $?     | 가장 최근에 완료한 포그라운드 명령의 종료 코드               |
+| $       | $$     | 현재 쉘의 PID                                                |
+| !       | $!     | 백그라운드에서 가장 최근에 실행된 명령의 PID                 |
+| _       | $_     | 실행된 마지막 명령의 마지막 인수                             |
+
+
+
