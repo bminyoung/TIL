@@ -354,3 +354,40 @@ echo "* is $all"
 
 
 
+## 9. 환경 변수
+
+- $EUID
+
+```
+$ echo "USER ID : $UID"
+USER ID : 1000
+
+# root 사용자인지 여부 확인
+$ vim euid.sh
+#!/bin/bash
+
+if [ "$EUID" -ne 0 ]; then
+ echo "krun as root"
+ exit
+fi
+echo hello
+
+$ chmod +x euid.sh
+$ ./euid.sh
+run as root
+
+$ sudo ./euid.sh
+[sudo] password for user:
+hello
+```
+
+
+
+- $RANDOM : 랜덤 값 출력
+
+```
+$ echo "$RANDOM"
+# 매번 출력이 다름
+```
+
+- 환경변수 값 확인은 `env` 명령어로 확인
