@@ -412,6 +412,7 @@ $ echo ${alnum[2]}
 c1
 
 # 정수형 변수
+
 $ declare -i inum=78
 $ inum=inum+1
 $ echo $inum
@@ -432,4 +433,203 @@ readonly variable
 $ declare -x xpath="${HOME}/Desktop/mydir"
 $ export XPATH="${HOME}/Desktop/mydir"
 ```
+
+
+
+## 11. 매개변수 확장
+
+- 특정 문자열을 제거하거나 replace할 수 있음
+- ${변수:n} : n번째 문자부터 출력
+- ${변수:n:m} : n번째 문자부터 m개 출력
+- ${변수\#패턴} : 패턴에 해당하는 문자열 제거
+- ${변수\##패턴} : 패턴에 해당하는 가장 긴 문자열 제거
+- ${변수%패턴} : 패턴에 해당하는 문자열 제거 (맨 뒤부터 검사)
+- ${변수%%패턴} : 패턴에 해당하는 가장 긴 문자열 제거 (맨 뒤부터 검사)
+- ${변수//패턴} : 패턴에 해당하는 문자열 **모두** 제거
+- ${변수/패턴/대체문자열} : 패턴에 해당하는 문자열 대체 (앞에서부터 1개)
+
+```
+$ testString="That that is is that that is not is not"
+
+# 문자열 길이
+$ echo ${#testString}
+39
+
+$ echo ${testString:0}
+That that is is that that is not is not
+
+$ echo ${testString:1}
+hat that is is that that is not is not
+
+$ echo ${testString:3}
+t that is is that that is not is not
+
+$ echo ${testString:3:3}
+t t
+
+$ echo ${testString#T*is}
+is that that is not is not
+
+$ echo ${testString##T*is}
+not
+
+$ echo ${testString%is*not}
+That that is is that that is not
+
+$ echo ${testString%%is*not}
+That that
+
+$ echo ${testString//that}
+That is is is not is not
+
+$ echo ${testString/that/this}
+That this is is that that is not is not
+
+# 패턴 지정 (대소문자 구분x)
+$ echo ${testString/[tT]hat/this}
+this that is is that that is not is not
+
+$ echo ${testString//[tT]hat/this}
+this this is is this this is not is not
+
+$ echo ${testString/#That/this}
+this that is is that that is not is not
+
+$ echo ${testString/%not/NO}
+That that is is that that is not is NO
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
