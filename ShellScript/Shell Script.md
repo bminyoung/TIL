@@ -391,3 +391,45 @@ $ echo "$RANDOM"
 ```
 
 - 환경변수 값 확인은 `env` 명령어로 확인
+
+
+
+## 10. Declare
+
+- 변수를 다양하게 선언할 수 있음.
+
+- -a : 배열 옵션
+
+- -i : 정수형 변수 사용
+- -r : 읽기 전용 변수 사용
+- -x : 변수 export
+
+```
+$ declare -a alnum=(a1 b1 c1 d1 e1 f1)
+$ echo ${alnum[1]}
+b1
+$ echo ${alnum[2]}
+c1
+
+# 정수형 변수
+$ declare -i inum=78
+$ inum=inum+1
+$ echo $inum
+79
+
+# 정수형 변수 비교
+$ num=78
+$ num=num+1
+$ echo $num
+num+1
+
+# 읽기 전용
+$ declare -r rPi=3.14
+$ rPi=312
+readonly variable
+
+# 변수 export
+$ declare -x xpath="${HOME}/Desktop/mydir"
+$ export XPATH="${HOME}/Desktop/mydir"
+```
+
