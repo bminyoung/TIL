@@ -501,9 +501,24 @@ That that is is that that is not is NO
 
 
 
+## 12. globe 패턴
 
+```
+$ echo *
 
+# 3글자 폴더 출력
+$ echo ???
 
+# 4글자 폴더 출력
+$ echo ????
+
+# b로 시작하는 3글자 폴더 출력
+$ echo b??
+
+# 첫글자가 a,b,c,d인 폴더 출력
+$ echo [abcd]*
+$ echo [a-d]*
+```
 
 
 
