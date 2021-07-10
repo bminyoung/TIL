@@ -522,6 +522,41 @@ $ echo [a-d]*
 
 
 
+## 13. 명령어(tr)
+
+> 문자 대체
+
+- tr 문자열A 문자열B : 문자열A의 각 문자들을 대응하는 문자열 B로 대체
+- -s (squeeze) : 반복되는 글자를 1글자로 축약
+- -d : 해당 글자를 삭제
+- -c (complement) : 지정한 글자를 제외한 다른 글자
+
+```
+# a->Z, b->A, c->B, ....
+$ tr abcdefghijklmnopqrstuvwxyz ZABCDEFGHIJKLMNOPQRSTUVWXY <<< "Hello World"
+HDKKN WNQKC
+
+$ tr [:lower:] [:upper:] <<< "Hello World"
+HELLO WORLD
+
+$ tr [:space:] '\t' <<< "Hello World"
+Hello    World    
+
+$ tr -s [:space:] <<< "Hello          World"
+Hello World
+
+$ tr -d [:space:] <<< "Hello          World"
+HelloWorld
+
+# 아무것도 출력 안된것처럼 보이지만 공백문자열만 출력
+$ tr -cd [:space:] <<< "Hello          World"
+       
+```
+
+
+
+
+
 
 
 
