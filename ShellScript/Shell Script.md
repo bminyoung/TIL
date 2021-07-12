@@ -610,6 +610,33 @@ $ /sbin/ifconfig eth0 | grep 'inet addr' | cut -d: -f2 | awk '{print $1}'
 
 
 
+## 15. 확장 glob
+
+- shopt -s extglob : 확장 glob 활성화
+- 소괄호 사용 시 공백문자가 포함되면 안됨
+
+| name | desc           |
+| ---- | -------------- |
+| ?    | 0~1개 일치     |
+| *    | 0개 이상 일치  |
+| +    | 하나 이상 일치 |
+| @    | 하나 일치      |
+| !    | 해당 패턴 제외 |
+
+
+
+```
+# 확장자가 jpg, bmp인 파일명만 출력
+$ echo *jpg *bmp
+
+$ shopt -s extglob
+
+# 확장자가 jpg, bmp가 아닌 파일명만 출력
+$ echo !(*jpg|*bmp)
+
+$ echo @(*jpg|*bmp)
+```
+
 
 
 
