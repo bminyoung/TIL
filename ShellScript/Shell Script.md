@@ -555,7 +555,58 @@ $ tr -cd [:space:] <<< "Hello          World"
 
 
 
+## 14. 명령어 (cut)
 
+- cut -c[범위] 파일 : 해당 파일에서 범위에 해당하는 부분만 출력
+
+```
+$ cat fruits.txt
+grapes
+orange
+tomato
+strawberry
+apple
+
+$ cut -c2 fruits.txt
+r
+r
+o
+t
+p
+
+$ cut -c1-3 fruits.txt
+gra
+ora
+tom
+str
+app
+
+$ cut -c3- fruits.txt
+apes
+ange
+mato
+rawberry
+ple
+
+$ cut -c1-1 fruits.txt
+grape
+orang
+tomat
+straw
+apple
+```
+
+- cut -d'문자' -fn [파일] : 파일에서 해당 delimiter로 split 후 n번째 필드 출력
+
+```
+$ cut -d':' -f1 /etc/passwd
+
+# 여러 필드를 뽑을 수 있음
+$ cut -d':' -f1,6 /etc/passwd
+
+$ /sbin/ifconfig eth0 | grep 'inet addr' | cut -d: -f2 | awk '{print $1}'
+(ip 주소)
+```
 
 
 
