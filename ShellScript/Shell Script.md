@@ -639,125 +639,54 @@ $ echo @(*jpg|*bmp)
 
 
 
+## 참고.
 
+#### 쉘 스크립트 문법 검사 도구
 
+> shellcheck.net
 
+- 쉘 스크립트 정적 분석 도구
+- 스크립트의 오류 검사
 
 
 
+#### 컬러 텍스트
 
+<img src="./Image/color_ex.png" alt="color_ex" style="zoom:50%;" />
 
+- 스타일 : 밑줄, 이탤릭체 등
 
+- 컬러 표
 
+<img src="./Image/color.png" alt="color" style="zoom:50%;" />
 
+- 스타일 표
 
+<img src="./Image/style.png" alt="style" style="zoom:50%;" />
 
 
 
+- 예시
 
+  ```
+  $ echo -e '\033[34;40mNew Color Prompt\033[0m'
+  New Color Prompt
+  
+  $ echo -e '\033[37;41mNew Color Prompt\033[0m'
+  New Color Prompt
+  
+  $ echo -e '\033[1;37;41mNew Color Prompt\033[0m'
+  New Color Prompt
+  ```
 
 
 
+#### 터미널 프롬프트 색상 변경 예시
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
+$ export PS1="\e[0;35m[\u@\h\W]$\e[m"
+$ export PS1="\e[0;33;1m[\u\e[m@\e[0;35;1m\h\e[m \W]"
+```
 
 
 
