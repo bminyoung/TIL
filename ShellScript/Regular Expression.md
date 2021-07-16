@@ -42,15 +42,53 @@
 
 
 
+## 2. 정규표현식 비교
+
+```
+$ read -p "Are you ready ?, press any key (y/n)" -n 1
+
+# Y or y 입력시 "exit 1" 실행
+$ if [[ ! $REPLY =~ ^[Yy]$ ]]; then exit 1; fi
+```
+
+- REPLY : READ 명령어에서 사용하는 디폴트 변수명
+- =~ : REGEX 비교문 (우측에 정규표현식)
 
 
 
+```
+$ locale='(..)_(..)'
+$ if [[ $LANG =~ $locale ]]
+> then
+> echo "Your country code is ${BASH_REMATCH[2]}."
+> echo "Your language code is ${BASH_REMATCH[1]}."
+> fi
+Your country code is US.
+Your language code is en.
+
+$ echo $LANG
+en_US.UTF-8
+
+# (..)_(..) => en_US 와 매치됨
+```
+
+- 정규표현식 사용 시 인용부호는 사용하지 않음
 
 
 
+#### 실습) 입력값이 숫자인지 확인하는 스크립트
 
+```
+read -p "Enter a number" number
+pat='^[0-9]+$'
+if ! [[ $number =~ $pat ]]; then
+echo "Not a number" >&2
+else
+echo "a number"
+fi
+```
 
-
+- ^[0-9]+$ : 0~9 숫자의 반복인지
 
 
 
