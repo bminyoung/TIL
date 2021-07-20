@@ -164,6 +164,24 @@ $ if $((true)); then echo true; fi
 
 
 
+## 6. exit와 종료상태
+
+- exit : 쉘 종료
+- exit 0 : 정상 종료 (0=true)
+- exit 1 : 쉘 종료 시 오류 발생 의미
+
+```
+$ rm myfile;echo $?
+
+$ rm myfile || { echo 'Could not delete file!'>&2; exit 1; }
+```
+
+
+
+
+
+
+
 
 
 
