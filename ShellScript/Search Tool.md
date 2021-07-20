@@ -85,6 +85,30 @@ hELLO wORLD
 
 
 
+## 3. 중괄호 확장
+
+```
+# noname1 ~ noname9 파일 생성
+$ touch noname{1,2,3,4,5,6,7,8,9}
+$ ls
+noname1 noname3 noname5 noname7 noname9
+noname2 noname4 noname6 noname8
+
+# dir1 ~ dir9 생성
+$ mkdir dir{1..9}
+
+# 계층화하여 폴더구조 생성
+$ mkdir -p newproject/{lib,doc/{pdf,ppt,doc},src,include/sys,bin}
+
+# eval : 입력 라인이 두 번 구문 분석됨 (코드를 동적으로 평가하는 데 사용)
+# {1..$length} : 중괄호 안에서는 변수 확장이 일어나지 못함 -> eval 사용
+$ length=40
+$ eval printf -v line '%.0s-' {1..$length}
+
+# "cp president.txt president.txt.bak" 과 같은 효과
+$ cp president.txt{,.bak}
+```
+
 
 
 
