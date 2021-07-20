@@ -111,15 +111,56 @@ $ cp president.txt{,.bak}
 
 
 
+## 4. 명령 대체
+
+> $(명령)
+
+```
+$ LANG=C; date
+$ LANG=C; echo "today is $(date)"
+$ LANG=C; echo "today is `date`"
+
+# cd dir1 -실패 => mkdir~ 실행, DIR1에 pwd 저장
+$ export DIR1="$( cd dir1 || { mkdir dir1 && cd dir1;}; pwd)"
+$ echo $DIR1
+```
 
 
 
+## 5. 산술 확장
 
+> $((산술식))
 
+- 산술 확장 내부에서 변수명에 달러기호$ 생략 가능
 
+```
+$ v1=12
+$ v2=$((v1+34))
+$ echo $v2
+46
+$ v3=$(($v1+$v2)); echo $v3
+58
+$ v3=$((v1+v2)); echo $v3
+58
+$ ((v3++))
+$ echo $v3
+59
 
+# C언어의 복합대입연산자
+$ ((v3+=1)); echo $v3
+60
 
+$ if true; then echo true; fi
+true
 
+# true=0으로 취급, 숫자로서의 0은 거짓
+$ if ((true)); then echo true; fi
+$ if ((0)); then echo true; fi
+
+# true=0 임을 확인 가능
+$ if $((true)); then echo true; fi
+0: command not found
+```
 
 
 
