@@ -178,6 +178,22 @@ $ rm myfile || { echo 'Could not delete file!'>&2; exit 1; }
 
 
 
+## 7. 논리 연산
+
+- cmd1 || cmd2 : cmd1이 성공적으로 실행되지 않으면 cmd2 실행
+
+```
+# dir 폴더가 없으면 dir 폴더를 생성
+$ ls dir || { mkdir dir; }
+```
+
+- cmd1 && cmd2 : cmd1이 성공적으로 실행되면 cmd2 실행
+
+```
+$ cd mydir && ./myscript
+$ make && make install
+```
+
 
 
 
