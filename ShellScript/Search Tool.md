@@ -214,7 +214,37 @@ $ shopt -q login_shell && echo 'login' || echo 'not-login'
 
 
 
+## 9. 명령분리자
 
+> ; (세미콜론)
+>
+> 명령어와 명령어를 구분
+
+- 아래 두 명령은 같은 결과
+
+```
+$ if true; then echo true; fi
+true
+
+$ if true
+> then echo true
+> fi
+true
+```
+
+- 예제
+
+```
+$ tool=saw;echo $tool
+saw
+
+# 세미콜론을 쓰지 않아 'hammer'가 저장되지 않음
+$ tool=hammer echo $tool
+saw
+
+$ echo $tool
+saw
+```
 
 
 
