@@ -248,35 +248,18 @@ saw
 
 
 
+## 10. 인라인 그룹
 
+- 하나의 그룹으로 묶기 : 중괄호 사용 {;}, 중괄호 안 마지막에 세미콜론(;)을 써주어야 함 
 
+```
+# 명령 의도
+# dir3가 있으면 "dir directory is here" 출력
+# dir3가 없으면 dir3 생성 & "dir directory is made" 출력
+$ ls dir3 && echo "dir directory is here" || mkdir dir3 && echo "dir directory is made"
+dir directory is made
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+$ ls dir3 && echo "dir directory is here" || {mkdir dir3 && echo "dir directory is made";}
+dir directory is made
+```
 
