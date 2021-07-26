@@ -178,6 +178,20 @@ script is running
 
 
 
+#### [실습] 전달인자를 입력하지 않았을 때 안내문 출력
+
+```
+#!/bin/bash
+
+if [ -z "$1" ]; then
+	echo "usage:$0 directory"
+	exit
+fi
+echo 'Have a nice day!'
+```
+
+
+
 
 
 
