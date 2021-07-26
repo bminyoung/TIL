@@ -303,9 +303,45 @@ done
 
 
 
+## 5. 루프문과 glob
+
+- glob 사용 시 인용부호를 사용하면 안됨
+
+```
+#########################
+# 확장자가 mp3인 파일 삭제 #
+#########################
+$ cd mydir;ls
+For Whom the Bell Tolls.mp3
+Gone With the Wind.mp3
+
+# 실패 -> "For" "Whom" "the" "Bell" 이런식으로 각각의 문자열로 인식됨
+$ for file in $(ls *.mp3);do
+>	rm "$file"
+> done
+
+# 실패 -> "For Whom the Bell Tolls.mp3 Gone With the Wind.mp3" 전체가 하나의 파일로 인식됨
+$ for file in "$(ls *.mp3)"; do
+> 	rm "$file";
+> done
+
+# 성공
+$ for file in *.mp3
+> do rm "$file"
+> done
+```
+
+- rm "$file" : 인용부호를 써주어야함 (공백문자 때문)
 
 
 
+#### [실습] 현재 폴더의 모든 파일의 백업파일 만들기
+
+```
+$ for file in *; do
+> cp "$file"{,.bak}
+> done
+```
 
 
 
