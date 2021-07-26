@@ -192,7 +192,31 @@ echo 'Have a nice day!'
 
 
 
+## 4. 반복문
 
+> while [테스트 코드]; do ... done
+>
+> for [범위]; do ... done
+
+```
+# "hello world"를 지속적으로 출력
+$ while true; do
+> echo "hello world"
+> sleep 1
+> done
+
+# 비프음을 지속적으로 출력
+$ while true; do
+> echo -n -e "\a";
+> sleep 1;
+> done
+
+# 1~10 출력
+$ COUNT=10
+$ for no in `eval echo {0..$COUNT}`; do
+> echo $no
+> done
+```
 
 
 
