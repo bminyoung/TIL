@@ -375,9 +375,46 @@ $ for no in `seq 1 10`; do
 
 
 
+## 7. case
+
+> case .. in
+>
+> [경우 1] ) [명령];;
+>
+> [경우 2] ) [명령];;
+>
+> ...
+>
+> esac
+
+- *) : 기타 (default)
+- 세미콜론은 2개씩 적어야함 (세미콜론 하나는 명령어 구분)
+
+```
+$ read -p "Enter any string: "
+Enter any string: abc
+$ case $REPLY in
+> 	+([[:digit:]]) ) echo "digits" ;;
+>	*) echo "not digits" ;;
+> esac
+not digits
+```
 
 
 
+#### [실습] 사용자가 Y/N 입력
+
+```
+[case.sh]
+
+#!/bin/bash
+read -s -n 1 -p "You really want to exit? " response
+case $response in
+Y|y) echo YES;;
+N|n) echo NO;;
+*) echo Killed;;
+esac
+```
 
 
 
