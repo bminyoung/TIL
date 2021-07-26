@@ -211,24 +211,95 @@ $ while true; do
 > sleep 1;
 > done
 
-# 1~10 출력
+# 1~10 출력 (중괄호 확장을 위해 eval 사용)
 $ COUNT=10
 $ for no in `eval echo {0..$COUNT}`; do
+> echo $no
+> done
+
+# 위와 같음
+$ for no in 0 1 2 3 4 5 6 7 8 9 10; do
 > echo $no
 > done
 ```
 
 
 
+#### [실습] 1~10의 합
+
+```
+$ sum=0
+$ for no in {1..10}; do
+> ((sum=sum+no))
+> done
+> echo SUM=$sum
+SUM=55
+```
 
 
 
+> for .. in ..
+
+```
+# pen -> 빈 문자열로 만들기
+$ classroom=(desk pen note chair book)
+$ echo ${classroom[@]}
+desk pen note chair book
+$ for i in ${!classroom[@]} ; do
+> 	if [ "${classroom[$i]}" = 'pen' ] ; then
+> 		classroom[$i]=''
+> 	fi
+> done
+$ echo ${classroom[@]}
+desk note chair book
+```
+
+- ${!classroom[@]} -> ! : 배열의 인덱스 참조
 
 
 
+> for ((;;)) 루프
+
+```
+# "Hello world" 문자열이 한글자씩 출력
+$ mystr="Hello world"
+$ for((i=0;i<${#mystr};i++)); do
+>	c="${mystr:$i:1}"
+>	echo "$c"
+> done
+```
 
 
 
+#### [참조] date
+
+```
+$ date +"%Y-%m-%d"
+2021-07-26
+
+$ date +"%Y-%m-%d %r"
+2021/07/26 10:30:43 PM
+
+$ date +"%Y-%m-%d %H:%M %A"
+2021/07/26 22:30 Monday
+
+$ date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
+DATE: 2021-07-26
+TIME: 22:30:43
+```
+
+
+
+#### [실습] 커맨드 시계
+
+```
+#!/bin/bash
+while true; do
+TIME=`DATE +'%Y-%m-%d %H:%M:%S'`
+echo -ne "${TIME}\r"
+sleep 1
+done
+```
 
 
 
