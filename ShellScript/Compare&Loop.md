@@ -418,6 +418,30 @@ esac
 
 
 
+## 8. select
+
+- 배열 요소가 메뉴 형식으로 출력되고 선택할 수 있음
+
+```
+$ movies=("Avengers" "Matrix" "Titanic")
+$ PS3="Plz select your favorite movie: "
+$ select movie in ${movies[@]}
+> do
+>	echo "$movie selected"
+> done
+
+
+$ movies=("Avengers" "Matrix" "Titanic" "None")
+$ PS3="Plz select your favorite movie: "
+$ select movie in ${movies[@]}
+> do
+>	case $movie in
+>		"None") echo "not in list. quit";break;;
+>		*) echo "$movie selected";;
+>	esac
+> done
+```
+
 
 
 
