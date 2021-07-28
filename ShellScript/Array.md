@@ -79,3 +79,50 @@ do
 done
 ```
 
+
+
+## 3. find & -print0
+
+```
+# 정상 동작하지 않음
+$ find . -name "*.mp3" | xargs rm -rf
+```
+
+- xargs : 파이프 기호 이전의 명령 수행 결과의 문자열을 그대로 rm 명령의 인수로 전달
+
+- 파일 이름에 공백이 포함된 경우
+  - 파일명="test file.mp3" => rm -rf test; rm -rf file.mp3 실행
+
+```
+# 마지막 널문자 확인
+$ find . -iname "*.mp3" -print0 | hexdump -C
+
+# -0 : 문자열을 널문자로 분리하려면 필수 옵션
+$ find . -iname "*.mp3" -print0 | xargs -0 ls
+
+$ find . -iname "*.mp3" -print0 | xargs -0 rm -rf
+```
+
+- -print0 : 모든 검색결과의 마지막에 널문자를 넣어줌
+
+
+
+#### 추가) find
+
+```
+# -maxdepth 1 : 현재 경로에서만 검색 
+$ find ./ -maxdepth 1 -iname '*.sh'
+
+# -exec [명령...] \;
+# {} : 검색 결과
+$ find ./ -name "*.bak" -exec ls -l {} \;
+
+# 홈 디렉토리에서 '.' 으로 시작하는 파일 검색
+$ find ~/ -maxdepth 1 -name ".*"
+
+# \(...\) : 2가지 이상 조건 조합
+# 퍼미션이 644 & 소유권이 user인 파일
+# -a : and
+$ find ./ \( -user user -a -perm 644 \) -print | xargs ls -l
+```
+
