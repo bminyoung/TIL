@@ -127,3 +127,82 @@ year=2020 in outer
 
 - 환경변수는 스크립트 내에서 변경해도 유효하지 않음
 
+
+
+## 5. 파일 디스크립터
+
+>FD(File Descriptor)
+>
+>프로그램이 파일을 참조하는 방식
+>
+>또는
+>
+>파일(파이프, 장치, 소켓 또는 터미널)처럼 작동하는 다른 리소스를 참조하는 방법
+
+- 데이터 소스에 대한 포인터와 비슷
+- 기록 가능한 장소와 같은 것
+- FD의 리소스에서 데이터를 읽거나 씀
+
+- 모든 프로세스는 3가지 열린 디스크립터를 가지고 있음
+  - 표준 입력(stdin) : fd 0
+  - 표준 출력(stdout) : fd 1
+  - 표준 오류(stderr) : fd 2
+
+```
+# 표준 출력장치 사용 (fd 1)
+$ echo hello world
+hello world
+
+# 표준 오류장치 사용 (fd 2)
+$ ls dir33333
+
+# 표준 입력장치 사용 (fd 0)
+$ read -p "key press"
+```
+
+
+
+## 6. 리다이렉션
+
+> 출력 내용을 파일로 저장 or 파일 내용을 다른 파일로 옮기기
+
+```
+$ echo "The seagull" > seagull.txt
+$ cat seagull.txt
+The seagull
+
+#위와 같음
+$ echo "The seagull" 1> seagull.txt
+
+# > : 기존 파일에 덮어쓰기 (없으면 생성)
+$ ls dir333 2> err.log
+
+# >> : 기존 파일에 추가
+$ ls dir444 2>> err.log
+
+# 파일 합치기
+$ echo ABCD > file1
+$ echo 1234 > file2
+$ cat file1 file2 > file
+$ cat file
+ABCD
+1234
+
+# < : 파일을 읽어서 while의 변수로 넣음
+$ while read v; do echo $v; done<file
+ABCD
+1234
+
+# 표준출력 -> 파일로 저장 (>)
+# 표준에러 -> 파일로 저장 (2>&1)
+$ echo "Jurassic World" > steven.txt 2>&1
+$ grep "Star Wars" steven.txt lucas.txt 2>&1
+grep: lucas.txt: No such file or directory
+```
+
+
+
+
+
+
+
