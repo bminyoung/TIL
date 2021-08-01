@@ -11,10 +11,22 @@ $ sleep 1000
 - 예제
 
 ```
+# mydaemon.sh 파일
+
+#!/bin/bash
+
+for i in{1..60};do
+date >> mydaemon.log
+sleep 1
+done
+```
+
+```
 $ date;nohup ./mydaemon.sh 1>/dev/null 2>&1 0</dev/null &
 ```
 
 - 1>/dev/null : 표준 출력은 휴지통으로
 - 2>&1 : 표준 에러는 표준 출력으로
 - 0</dev/null : 표준 입력을 차단
-- & : 백드라운드 프로세스화
+- & : 백드라운드 프로세스 화
+
