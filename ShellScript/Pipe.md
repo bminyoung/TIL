@@ -53,6 +53,21 @@ $ echo $i
 
 
 
+## 3. 서브 쉘
+
+> (명령)
+
+```
+# 20초간 파일에 write
+$ echo begin;(for i in {200..220}); do echo $i >> num100; sleep 1;done)&
+
+# test폴더의 파일을 익명(-)파일로 압축 -> Desktop으로 이동해 압축 풀기
+# 복사 시간이 짧아짐
+$ (cd ~/Desktop/test && tar cf - .) | (cd ~/Desktop && tar xpvf -)
+```
+
+
+
 
 
 
