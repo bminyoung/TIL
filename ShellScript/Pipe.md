@@ -68,6 +68,25 @@ $ (cd ~/Desktop/test && tar cf - .) | (cd ~/Desktop && tar xpvf -)
 
 
 
+## 4. 함수
+
+> 함수명() {}
+>
+> function 함수명() {}
+
+- 소괄호 내에 아무것도 적지 않음
+- 선 정의 후 사용
+
+- 재사용성 증가
+- 가독성 증가
+
+```
+$ sum() { declare -i sum; START=$1; END=$2;for i in `eval echo {$START..$END}`; do ((sum+=i)); done; echo $sum; }
+
+$ total=$(sum 1 100); echo $total
+5050
+```
+
 
 
 
