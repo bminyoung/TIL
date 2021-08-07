@@ -105,6 +105,23 @@ $ while [$# -gt 0 ]; do echo $1; shift 1;done
 
 
 
+## 6. source, bashrc
+
+> source : bashrc의 내용을 적용시킴
+>
+> source ~/.bashrc
+>
+> 또는 . ~/.bashrc
+
+```
+$ source ~/.bashrc
+$ . ~/.bashrc
+
+# 그냥 실행 시 오류
+$ ~/.bashrc
+Permission denied
+```
+
 
 
 
