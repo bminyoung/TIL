@@ -89,7 +89,19 @@ $ total=$(sum 1 100); echo $total
 
 
 
+## 5. shift
 
+>매개변수 리스트를 하나씩 자리이동
+
+```
+$ set 1 2 3 4 5
+$ while [$# -gt 0 ]; do echo $1; shift 1;done
+1
+2
+3
+4
+5
+```
 
 
 
