@@ -124,5 +124,25 @@ Permission denied
 
 
 
+## 7. 작업제어
+
+- 모든 프로세스(프로그램)는 모든 입/출력 오류 장치(파일)를 **오픈**한 상태로 실행
+  - STDIN / STDOUT / STDERR
+- ctrl + c : 인터럽트
+- ctrl + z : 프로세스 일시정지
+- bg : 가장 최근의 프로세스 백그라운드화
+- fg : 가장 최근의 프로세스 포그라운드화
+
+```
+# foreground process
+$ sleep 1000
+
+# background process
+$ sleep 1000 &
+
+# background -> foreground
+$ fg
+```
+
 
 
