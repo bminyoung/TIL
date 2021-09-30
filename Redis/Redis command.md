@@ -88,9 +88,29 @@
 
 #### LPUSH, RPUSH
 
-> LPUSH [key] [value]
+> LPUSH [key] [value1] [value2] [value3] ...
 >
-> RPUSH [key] [value]
+> RPUSH [key] [value1] [value2] [value3] ...
 
 - 리스트 처음/끝에 값 추가
 
+
+
+#### LPOP, RPOP
+
+> LPOP [key]
+>
+> RPOP [key]
+>
+> \> [value]
+
+- 리스트 처음/끝에서 값 가져오기
+
+
+
+#### LRANGE
+
+> LRANGE [key] [start] [end]
+>
+
+- 리스트(key) subset 가져오기
