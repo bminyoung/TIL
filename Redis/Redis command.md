@@ -114,3 +114,49 @@
 >
 
 - 리스트(key) subset 가져오기
+
+
+
+### *Set*
+
+#### SADD
+
+> SADD [key] [value1] [value2] ...
+>
+> \> 0 (값이 이미 있음)
+>
+> \> 1 (추가됨)
+
+- set에 값 추가
+
+
+
+#### SREM
+
+> SREM [key] [value]
+
+- set에서 값 제거
+
+
+
+#### SMEMBERS
+
+> SMEMBERS [key]
+
+- set 값 가져오기
+
+
+
+#### SISMEMBER
+
+> SISMEMBER [key] [value]
+
+- 값이 set에 포함되었는지
+
+
+
+#### SUNION
+
+> SUNION [set1] [set2]
+
+- set 합치기
