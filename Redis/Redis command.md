@@ -217,3 +217,20 @@
 
 - hash에서 모든 필드 값 가져오기
 
+
+
+#### HINCRBY
+
+> HINCRBY [key] [field] [num]
+>
+
+- 해당 필드 값 1 증가
+
+
+
+#### HDEL
+
+> HGET [key] [field]
+>
+
+- hash에서 해당 필드 값 삭제
